@@ -40,26 +40,10 @@ const UserDropdown = props => {
       <DropdownItem
         tag="a"
         href="#"
-        onClick={e => handleNavigation(e, "/email/inbox")}
-      >
-        <Icon.Mail size={14} className="mr-50" />
-        <span className="align-middle">My Inbox</span>
-      </DropdownItem>
-      <DropdownItem
-        tag="a"
-        href="#"
-        onClick={e => handleNavigation(e, "/todo/all")}
-      >
-        <Icon.CheckSquare size={14} className="mr-50" />
-        <span className="align-middle">Tasks</span>
-      </DropdownItem>
-      <DropdownItem
-        tag="a"
-        href="#"
         onClick={e => handleNavigation(e, "/chat")}
       >
         <Icon.MessageSquare size={14} className="mr-50" />
-        <span className="align-middle">Chats</span>
+        <span className="align-middle">Support</span>
       </DropdownItem>
       <DropdownItem tag="a" href="#" onClick={e => handleNavigation(e, "/ecommerce/wishlist")}>
         <Icon.Heart size={14} className="mr-50" />
@@ -104,7 +88,6 @@ class NavbarUser extends React.PureComponent {
     langDropdown: false,
     shoppingCart: [
       
-       
     ],
     suggestions: []
   }
@@ -374,69 +357,7 @@ class NavbarUser extends React.PureComponent {
             </div>
           </div>
         </NavItem>
-        <UncontrolledDropdown
-          tag="li"
-          className="dropdown-notification nav-item"
-        >
-          <DropdownToggle tag="a" className="nav-link position-relative">
-            <Icon.ShoppingCart size={21} />
-            {this.state.shoppingCart.length > 0 ? (
-              <Badge pill color="primary" className="badge-up">
-                {this.state.shoppingCart.length}
-              </Badge>
-            ) : null}
-          </DropdownToggle>
-          <DropdownMenu
-            tag="ul"
-            right
-            className={`dropdown-menu-media dropdown-cart ${
-              this.state.shoppingCart.length === 0 ? "empty-cart" : ""
-            }`}
-          >
-            <li
-              className={`dropdown-menu-header ${
-                this.state.shoppingCart.length === 0 ? "d-none" : "d-block"
-              }`}
-            >
-              <div className="dropdown-header m-0">
-                <h3 className="white">
-                  {this.state.shoppingCart.length} Items
-                </h3>
-                <span className="notification-title">In Your Cart</span>
-              </div>
-            </li>
-            <PerfectScrollbar
-              className="media-list overflow-hidden position-relative"
-              options={{
-                wheelPropagation: false
-              }}
-            >
-              {renderCartItems}
-            </PerfectScrollbar>
-            <li
-              className={`dropdown-menu-footer border-top ${
-                this.state.shoppingCart.length === 0 ? "d-none" : "d-block"
-              }`}
-            >
-              <div
-                className="dropdown-item p-1 text-center text-primary"
-                onClick={() => history.push("/ecommerce/checkout")}
-              >
-                <Icon.ShoppingCart size={15} />
-                <span className="align-middle text-bold-600 ml-50">
-                  Checkout
-                </span>
-              </div>
-            </li>
-            <li
-              className={`empty-cart ${
-                this.state.shoppingCart.length > 0 ? "d-none" : "d-block"
-              } p-2`}
-            >
-              Your Cart Is Empty
-            </li>
-          </DropdownMenu>
-        </UncontrolledDropdown>
+          
         <UncontrolledDropdown
           tag="li"
           className="dropdown-notification nav-item"
@@ -445,13 +366,13 @@ class NavbarUser extends React.PureComponent {
             <Icon.Bell size={21} />
             <Badge pill color="primary" className="badge-up">
               {" "}
-              5{" "}
+              1{" "}
             </Badge>
           </DropdownToggle>
           <DropdownMenu tag="ul" right className="dropdown-menu-media">
             <li className="dropdown-menu-header">
               <div className="dropdown-header mt-0">
-                <h3 className="text-white">5 New</h3>
+                <h3 className="text-white">1 New</h3>
                 <span className="notification-title">App Notifications</span>
               </div>
             </li>
@@ -487,107 +408,10 @@ class NavbarUser extends React.PureComponent {
                   </small>
                 </Media>
               </div>
-              <div className="d-flex justify-content-between">
-                <Media className="d-flex align-items-start">
-                  <Media left href="#">
-                    <Icon.DownloadCloud
-                      className="font-medium-5 success"
-                      size={21}
-                    />
-                  </Media>
-                  <Media body>
-                    <Media heading className="success media-heading" tag="h6">
-                      99% Server load
-                    </Media>
-                    <p className="notification-text">
-                      You got new order of goods?
-                    </p>
-                  </Media>
-                  <small>
-                    <time
-                      className="media-meta"
-                      dateTime="2015-06-11T18:29:20+08:00"
-                    >
-                      5 hours ago
-                    </time>
-                  </small>
-                </Media>
-              </div>
-              <div className="d-flex justify-content-between">
-                <Media className="d-flex align-items-start">
-                  <Media left href="#">
-                    <Icon.AlertTriangle
-                      className="font-medium-5 danger"
-                      size={21}
-                    />
-                  </Media>
-                  <Media body>
-                    <Media heading className="danger media-heading" tag="h6">
-                      Warning Notification
-                    </Media>
-                    <p className="notification-text">
-                      Server has used 99% of CPU
-                    </p>
-                  </Media>
-                  <small>
-                    <time
-                      className="media-meta"
-                      dateTime="2015-06-11T18:29:20+08:00"
-                    >
-                      Today
-                    </time>
-                  </small>
-                </Media>
-              </div>
-              <div className="d-flex justify-content-between">
-                <Media className="d-flex align-items-start">
-                  <Media left href="#">
-                    <Icon.CheckCircle
-                      className="font-medium-5 info"
-                      size={21}
-                    />
-                  </Media>
-                  <Media body>
-                    <Media heading className="info media-heading" tag="h6">
-                      Complete the task
-                    </Media>
-                    <p className="notification-text">
-                      One of your task is pending.
-                    </p>
-                  </Media>
-                  <small>
-                    <time
-                      className="media-meta"
-                      dateTime="2015-06-11T18:29:20+08:00"
-                    >
-                      Last week
-                    </time>
-                  </small>
-                </Media>
-              </div>
-              <div className="d-flex justify-content-between">
-                <Media className="d-flex align-items-start">
-                  <Media left href="#">
-                    <Icon.File className="font-medium-5 warning" size={21} />
-                  </Media>
-                  <Media body>
-                    <Media heading className="warning media-heading" tag="h6">
-                      Generate monthly report
-                    </Media>
-                    <p className="notification-text">
-                      Reminder to generate monthly report
-                    </p>
-                  </Media>
-                  <small>
-                    <time
-                      className="media-meta"
-                      dateTime="2015-06-11T18:29:20+08:00"
-                    >
-                      Last month
-                    </time>
-                  </small>
-                </Media>
-              </div>
+           
+           
+           
+       
             </PerfectScrollbar>
             <li className="dropdown-menu-footer">
               <DropdownItem tag="a" className="p-1 text-center">

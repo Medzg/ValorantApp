@@ -21,9 +21,8 @@ const Footer = props => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Pixinvent,
           </a>
-          All rights reserved
+          All rights reserved 
         </span>
         <span className="float-md-right d-none d-md-block">
           <span className="align-middle">Hand-crafted & Made with</span>{" "}

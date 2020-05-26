@@ -4,6 +4,7 @@ import { Button ,Card,
     CardImg,
     Row, Col} from 'reactstrap'
 import img1 from "../assets/img/pages/content-img-1.jpg"
+import CheckBoxesVuexy from '../components/@vuexy/checkbox/CheckboxesVuexy';
 export default function Empty() {
     const WhenClick = (e)=>{
         e.preventDefault();
@@ -40,6 +41,7 @@ export default function Empty() {
             </CardBody>
           </Card>
           </Col>
+          <CheckBoxesVuexy></CheckBoxesVuexy>
         </div>
         </Row>
     )

@@ -19,18 +19,19 @@
 
 // Overrides user variable
 @import "../core/variables/components-variables";
-
+ $Costum-Color  : #0f1923;
+ $Costum-Color-selcted :  rgb(78, 93, 109);
 body {
   &.semi-dark-layout {
     /************ Main Menu **************/
 
     // main menu
     .main-menu {
-      background-color: $dark-card-color;
+      background-color: $Costum-Color;
       .shadow-bottom {
         background: linear-gradient(
           180deg,
-          #0f1642 44%,
+          #0f1923 44%,
           rgba(15, 22, 66, 0.51) 73%,
           rgba(44, 48, 60, 0)
         );
@@ -39,7 +40,7 @@ body {
         .navigation {
           .sidebar-group-active {
             a {
-              background-color: $content-dark-bg;
+              background-color: $Costum-Color;
             }
           }
         }
@@ -85,7 +86,7 @@ body {
     // main menu content
     .main-menu-content {
       .navigation-main {
-        background-color: $dark-card-color;
+        background-color: $Costum-Color;
         .nav-item {
           svg {
             color: $theme-dark-text-color;
@@ -100,7 +101,7 @@ body {
             color: $theme-dark-text-color;
           }
           .menu-content {
-            background-color: $dark-card-color;
+            background-color: $Costum-Color;
             .active {
               .menu-item {
                 color: $white;
@@ -109,7 +110,7 @@ body {
             li {
               &:not(.active) {
                 a {
-                  background-color: $dark-card-color;
+                  background-color: $Costum-Color;
                 }
               }
               &.hover {
@@ -129,11 +130,11 @@ body {
         }
         .sidebar-group-active {
           a {
-            background: $dark-card-color;
+            background: $Costum-Color;
             border-radius: 4px;
           }
           .menu-content {
-            background-color: $dark-card-color;
+            background-color: $Costum-Color;
             .active {
               z-index: 1;
               a {
